@@ -1,9 +1,12 @@
-import { Box, Button, Container, Select, TextField, Typography } from '@mui/material'
+import { Box, Button, Container, IconButton, Select, TextField, Typography } from '@mui/material'
+import { DeleteForever } from '@mui/icons-material';
 import TemplateDefault from '../../src/templates/Default'
 import { createUseStyles } from 'react-jss'
 import theme from '../../src/theme'
 
 const useStyles = createUseStyles({
+  mask: {},
+  mainImage: {},
   container: {
     padding: theme.spacing(8, 0, 6),
   },
@@ -13,6 +16,51 @@ const useStyles = createUseStyles({
   },
   boxContainer: {
     paddingBottom: theme.spacing(3),
+  },
+  thumbsContainer: {
+    display: 'flex',
+    marginTop: 15,
+  },
+  dropzone: {
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    textAlign: 'center',
+    padding: '10px',
+    margin: '0 15px 15px 0',
+    width: 200,
+    height: 150,
+    backgroundColor: theme.palette.background.default,
+    border: '2px dashed black'
+  },
+  thumb: {
+    width: 200,
+    height: 150,
+    backgroundSize: 'cover', 
+    backgroundPosition: 'center center',
+    position: 'relative',
+
+    '& $mainImage': {
+      backgroundColor: 'red',
+      padding: '6px 10px',
+      position: 'absolute',
+      bottom: 0,
+      left: 0,
+    },
+
+    '&:hover $mask': {
+      display: 'flex'
+    },
+    
+    '& $mask': {
+      display: 'none',
+      backgroundColor: 'rgba(0,0,0,0.7)',
+      height:'100%',
+      width: '100%',
+      justifyContent: 'center',
+      alignItems: 'center',
+      textAlign: 'center',
+    }
   }
 })
 
@@ -82,7 +130,29 @@ const classes = useStyles()
           </Typography>
           <Typography variant="div" component="body2" color="textPrimary">
             A primeira imagem é a foto principal do seu anúncio
-          </Typography>    
+          </Typography>   
+          <Box className={classes.thumbsContainer}>
+            <Box className={classes.dropzone}>
+              <Typography variant="body2" color="textPrimary">
+                Clique para adicionar ou arraste a imagem para aquui.
+              </Typography>
+            </Box>
+            <Box 
+              className={classes.thumb}
+              style={{ backgroundImage: 'url(https://m.media-amazon.com/images/I/619QaGrReCL._AC_SY450_.jpg)' }}
+            >
+              <Box className={classes.mainImage}>
+                <Typography variant='body2' color="secondary">
+                  Principal
+                </Typography>
+              </Box>
+              <Box className={classes.mask}>
+                <IconButton color="secondary" >
+                  <DeleteForever fontSize='large'/>
+                </IconButton>
+              </Box>
+            </Box>
+          </Box> 
         </Box>
       </Container>
 
