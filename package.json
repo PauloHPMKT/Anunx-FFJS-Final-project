@@ -16,6 +16,7 @@
     "next": "12.1.6",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-dropzone": "^14.2.2",
     "react-jss": "^10.9.0"
   },
   "devDependencies": {
