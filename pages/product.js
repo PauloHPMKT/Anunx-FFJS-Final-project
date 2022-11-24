@@ -1,4 +1,13 @@
-import { Avatar, Box, CardHeader, CardMedia, Chip, Container, Grid, Typography, Card } from '@mui/material'
+import { Avatar, 
+  Box, 
+  CardHeader, 
+  CardMedia, 
+  Chip, 
+  Container, 
+  Grid, 
+  Typography, 
+  Card 
+} from '@mui/material'
 import { createUseStyles } from 'react-jss'
 import Default from '../src/templates/Default'
 import Carousel from 'react-material-ui-carousel'
