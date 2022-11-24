@@ -9,10 +9,10 @@ import { Avatar,
   Card 
 } from '@mui/material'
 import { createUseStyles } from 'react-jss'
-import Default from '../src/templates/Default'
+import Default from '../../src/templates/Default'
 import Carousel from 'react-material-ui-carousel'
 
-import theme from '../src/theme'
+import theme from '../../src/theme'
 
 const useStyles = createUseStyles({
   box: {
