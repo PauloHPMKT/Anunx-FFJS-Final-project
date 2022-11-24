@@ -32,6 +32,10 @@ const useStyles = createUseStyles({
 
   card: {
     height: '100%',
+  },
+
+  cardMedia: {
+    paddingTop: '56%',
   }
 })
 
@@ -44,16 +48,32 @@ const Product = () => {
         <Grid container spacing={3}>
           <Grid item xs={8}>
             <Box className={classes.box}>
+            <Carousel 
+              autoPlay={false}
+              navButtonsAlwaysInvisible
+              animation="slide"
+              navButtonsProps={{
+                style: {
+                  color: 'white',
+                  borderRadius: 0,
+                }
+              }}  
+            >
               <Card className={classes.card}>
                 <CardMedia 
-                  image="https://source.unsplash.com/ramdom"
+                  className={classes.cardMedia}
+                  image="https://source.unsplash.com/ramdom?a=1"
                   title="Titulo da Imagem"
                 />
               </Card>
-
-              <Carousel>
-
-              </Carousel>
+              <Card className={classes.card}>
+                <CardMedia 
+                  className={classes.cardMedia}
+                  image="https://source.unsplash.com/ramdom?a=3"
+                  title="Titulo da Imagem"
+                />
+              </Card>
+            </Carousel>
             </Box>
             <Box className={classes.box} textAlign="left"> 
               <Typography component="span" variant="caption">Publicado  16 Junho de 2022</Typography>
